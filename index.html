@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abigail Schreider, Strategic Service Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FFFFFF;
+    --ink: #111111;
+    --ink-soft: #5C5C5C;
+    --rose: #FF2D78;
+    --ochre: #FF2D78;
+    --line: #E6E6E6;
+    --card: #FFFFFF;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- NAV ---------- */
+  nav {
+    position: sticky;
+    top: 0;
+    background: #111111;
+    border-bottom: 1px solid var(--line);
+    z-index: 10;
+  }
+  .nav-inner {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 18px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-name {
+    font-family: 'Sora', sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 24px;
+  }
+  .nav-links a {
+    font-size: 14px;
+    color: #B8B8B8;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: color 0.15s;
+  }
+  .nav-links a:hover, .nav-links a.active {
+    color: var(--rose);
+  }
+
+  /* ---------- HERO ---------- */
+  header.hero {
+    padding: 76px 0 18px;
+  }
+  .eyebrow {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin: 0 0 18px;
+    font-weight: 500;
+  }
+  h1 {
+    font-family: 'Sora', sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1.32;
+    margin: 0 0 22px;
+    letter-spacing: -0.01em;
+  }
+  .hero-greeting {
+    font-family: 'Sora', sans-serif;
+    font-weight: 500;
+    font-size: 19px;
+    color: var(--ink);
+    margin: 0 0 28px;
+  }
+  .hero-title {
+    font-size: 19px;
+    color: var(--ink-soft);
+    font-weight: 400;
+    margin: 0 0 36px;
+  }
+  .slogan {
+    font-family: 'Sora', sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 22px;
+    color: var(--ink);
+    border-left: 2px solid var(--rose);
+    padding-left: 20px;
+    margin: 0 0 8px;
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section {
+    padding: 56px 0;
+    border-top: 1px solid var(--line);
+  }
+  header.hero + section { border-top: none; padding-top: 0; }
+
+  h2 {
+    font-family: 'Sora', sans-serif;
+    font-weight: 500;
+    font-size: 26px;
+    margin: 0 0 24px;
+  }
+
+  p { margin: 0 0 18px; font-size: 16.5px; color: var(--ink); }
+  p.lead { font-size: 18px; }
+  strong { font-weight: 600; }
+
+  .accent { color: var(--ink); font-weight: 600; }
+  .accent2 { color: var(--ochre); font-weight: 500; }
+
+  /* ---------- WHEN TO WORK WITH ME ---------- */
+  .scenario {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 32px;
+    align-items: flex-start;
+  }
+  .scenario:last-child { margin-bottom: 0; }
+  .arrow {
+    font-family: 'Sora', sans-serif;
+    font-size: 22px;
+    color: var(--rose);
+    line-height: 1.5;
+    flex-shrink: 0;
+    width: 24px;
+  }
+  .scenario-title {
+    font-weight: 600;
+    color: var(--rose);
+    margin: 0 0 4px;
+    font-size: 17px;
+  }
+  .scenario p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 15.5px;
+  }
+
+  /* ---------- BEYOND WORK ---------- */
+  .beyond-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .beyond-item {
+    display: flex;
+    gap: 16px;
+  }
+  .beyond-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--ochre);
+    margin-top: 9px;
+    flex-shrink: 0;
+  }
+  .beyond-item p { margin: 0; }
+  .beyond-item .label {
+    font-weight: 600;
+    color: var(--rose);
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  .contact-links a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 16.5px;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s, color 0.15s;
+    width: fit-content;
+  }
+  .contact-links a:hover {
+    color: var(--rose);
+    border-color: var(--rose);
+  }
+
+  footer {
+    padding: 40px 0 60px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 540px) {
+    h1 { font-size: 26px; }
+    .nav-links { gap: 16px; }
+    header.hero { padding-top: 56px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-name" onclick="showView('home'); return false;">Abigail Schreider</a>
+    <div class="nav-links">
+      <a href="#" id="nav-home" class="active" onclick="showView('home'); return false;">Home</a>
+      <a href="#" id="nav-portfolio" onclick="showView('portfolio'); return false;">Portfolio</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap" id="view-home">
+
+  <header class="hero">
+    <h1>I help organizations close the gap between what they know about their customers and how they actually operate.</h1>
+    <p class="hero-greeting">Hola, I'm Abi.</p>
+  </header>
+
+  <section id="about">
+    <p>I'm a <strong>strategic service designer</strong> with ten years of experience working at the intersection of organizational complexity and customer experience, currently at Thoughtworks, based in Köln.</p>
+    <p>My focus is helping product-driven organizations build a shared understanding of their customers, and the internal conditions to actually act on it. I work alongside senior stakeholder level, where the real blockers to change tend to live.</p>
+    <p>I bring a critical lens to how organizations are designed and into the way I approach service design and transformation. That perspective comes from my background in gender-sensitive design, and it shapes how I read a room, not just how I draw a journey map.</p>
+  </section>
+
+  <section id="when">
+    <h2>When to work with me</h2>
+
+    <div class="scenario">
+      <div class="arrow">→</div>
+      <div>
+        <p class="scenario-title">To close the gap between insight and operations</p>
+        <p>You have customer research, but it's not shaping decisions. I help connect what you know about your customers to how teams actually plan, prioritize, and ship.</p>
+      </div>
+    </div>
+
+    <div class="scenario">
+      <div class="arrow">→</div>
+      <div>
+        <p class="scenario-title">To align teams that don't usually talk to each other</p>
+        <p>Tech, frontline, and leadership see the customer differently, and that gap is usually where transformation fails. I facilitate the workshops and journey work that build a shared picture.</p>
+      </div>
+    </div>
+
+    <div class="scenario">
+      <div class="arrow">→</div>
+      <div>
+        <p class="scenario-title">To bring an outside perspective to complex change</p>
+        <p>When a transformation program needs someone who can hold the executive conversation and still get into the detail of the journey, I work as that bridge.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="beyond">
+    <h2>Beyond work</h2>
+    <p>A few other things that shape how I think and who I am:</p>
+
+    <div class="beyond-grid">
+      <div class="beyond-item">
+        <div class="beyond-dot"></div>
+        <p><span class="label">Teaching</span>: I'm a guest lecturer at the University of San Andrés and the University of Buenos Aires, where I teach on gender, communication, and design.</p>
+      </div>
+      <div class="beyond-item">
+        <div class="beyond-dot"></div>
+        <p><span class="label">Organising</span>: I'm part of this feminist design collective called Hay Futura, exploring collective forms of design practice.</p>
+      </div>
+      <div class="beyond-item">
+        <div class="beyond-dot"></div>
+        <p><span class="label">Making things by hand</span>: I'm a little bit crafty. When I'm not designing services, I'm usually making something with my hands. It keeps me honest about what "good" actually feels like.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Get in touch</h2>
+    <p>If any of this resonates, I'd like to hear from you.</p>
+    <div class="contact-links">
+      <a href="mailto:abigail.schreider@gmail.com">abigail.schreider@gmail.com</a>
+      <a href="https://linkedin.com/in/abischreider" target="_blank">LinkedIn: /abischreider</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Abigail Schreider. Built with care, in Köln.
+  </footer>
+
+</div>
+
+<!-- ================= PORTFOLIO ================= -->
+<div class="wrap" id="view-portfolio" style="display:none;">
+
+  <!-- Password gate -->
+  <div id="portfolio-gate" style="padding: 64px 0;">
+    <h2>Portfolio</h2>
+    <p>This section includes client names and project details. Enter the password to continue, or reach out and I'll share it with you.</p>
+    <div style="display:flex; gap:10px; margin-top: 18px; flex-wrap: wrap;">
+      <input type="password" id="portfolio-password" placeholder="Password" style="font-family:'Work Sans',sans-serif; font-size:15px; padding:10px 14px; border:1px solid var(--line); border-radius:6px; flex:1; min-width:180px;">
+      <button onclick="checkPortfolioPassword()" style="font-family:'Work Sans',sans-serif; font-size:15px; font-weight:500; padding:10px 20px; border:none; border-radius:6px; background:var(--rose); color:#fff; cursor:pointer;">Enter</button>
+    </div>
+    <p id="portfolio-error" style="display:none; color:var(--rose); font-size:14px; margin-top:10px;">That password isn't right. Try again, or get in touch and I'll send it over.</p>
+  </div>
+
+  <!-- Index of projects -->
+  <div id="portfolio-index" style="display:none;">
+    <h2>Selected work</h2>
+    <p>A closer look at two recent projects, including client names and what we actually did.</p>
+
+    <div style="display:flex; flex-direction:column; gap:18px; margin-top: 32px;">
+
+      <a href="#" onclick="showProject('philips'); return false;" style="text-decoration:none; color:var(--ink); display:block; border:1px solid var(--line); border-radius:12px; overflow:hidden; transition: border-color 0.15s;">
+        <div style="background:#EAEAEA; height:180px; display:flex; align-items:center; justify-content:center; color:var(--ink-soft); font-family:'Work Sans',sans-serif; font-size:13px;">
+          [ image: Philips ]
+        </div>
+        <div style="padding:20px 22px;">
+          <p style="font-family:'Sora',sans-serif; font-weight:600; font-size:19px; margin:0 0 4px;">Philips</p>
+          <p style="margin:0; color:var(--ink-soft); font-size:15px;">Cloud operating model transformation</p>
+        </div>
+      </a>
+
+      <a href="#" onclick="showProject('tbc'); return false;" style="text-decoration:none; color:var(--ink); display:block; border:1px solid var(--line); border-radius:12px; overflow:hidden; transition: border-color 0.15s;">
+        <div style="background:#EAEAEA; height:180px; display:flex; align-items:center; justify-content:center; color:var(--ink-soft); font-family:'Work Sans',sans-serif; font-size:13px;">
+          [ image: TBC Bank ]
+        </div>
+        <div style="padding:20px 22px;">
+          <p style="font-family:'Sora',sans-serif; font-weight:600; font-size:19px; margin:0 0 4px;">TBC Bank</p>
+          <p style="margin:0; color:var(--ink-soft); font-size:15px;">Customer centricity at C-suite level</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- Philips detail -->
+  <div id="project-philips" style="display:none; padding: 48px 0;">
+    <a href="#" onclick="backToIndex(); return false;" style="font-size:14px; color:var(--rose); text-decoration:none;">← Back to all projects</a>
+    <div style="background:#EAEAEA; height:220px; display:flex; align-items:center; justify-content:center; color:var(--ink-soft); font-family:'Work Sans',sans-serif; font-size:13px; border-radius:12px; margin:20px 0 32px;">
+      [ image: Philips ]
+    </div>
+    <h2 style="margin-bottom:4px;">Philips</h2>
+    <p style="color:var(--ink-soft); font-size:17px; margin-top:0; margin-bottom:32px;">Cloud operating model transformation</p>
+
+    <p>Two years into their transformation, Philips hadn't delivered. Delivery, support, client consent and security, platform, and change management were all working in parallel, each with their own goals and budgets, with no shared way of working pulling them together.</p>
+    <p>The ambition was to move patient monitor software toward continuous delivery: hospitals always running the latest, most trustworthy version, supported proactively instead of reactively, on a platform built for scale and consistency. None of that was possible without first understanding why, after two years, nothing had reached hospitals yet.</p>
+
+    <p><strong>What we did:</strong></p>
+    <p>We started with an assessment of how the organization actually worked: its operating maturity, its technical feasibility, and where its real blockers were. What emerged wasn't a technical problem so much as a structural one. Teams, regions, and leadership were optimizing for their own siloed budgets and goals, with most decisions concentrated at the budget-holder level and very little real ownership sitting with product teams.</p>
+    <p>From there, the work became about shifting Philips toward a product culture rather than a project one. That meant making teams accountable and giving them room to actually deliver, building a platform team that served internal teams instead of operating as its own island, and developing roles with enough authority to own decisions instead of escalating everything upward.</p>
+    <p>We helped set up a team topologies structure, including a customer-facing service experience team that hadn't existed before, and trained Philips teams on the skills they'd need to operate it. Because the client was new to agile ways of working, part of the work was also practical: coaching clients on digital fluency and basic program management, so the new structure had something to run on.</p>
+    <p>A harder, less visible challenge ran through all of this: building enough trust with customers that they'd let Philips test, experiment, and iterate on hospital software, rather than expecting a finished product every time.</p>
+
+    <p><strong>Where it landed:</strong></p>
+    <p>Philips established sensible defaults for how teams plan and deliver, stood up a platform team for the first time, and moved from a purely reactive support model toward a proactive one. The team launched the first proof of concept for continuous patient monitor updates in test hospitals, the first real validation that the new way of working could hold up in a live clinical environment.</p>
+  </div>
+
+  <!-- TBC detail -->
+  <div id="project-tbc" style="display:none; padding: 48px 0;">
+    <a href="#" onclick="backToIndex(); return false;" style="font-size:14px; color:var(--rose); text-decoration:none;">← Back to all projects</a>
+    <div style="background:#EAEAEA; height:220px; display:flex; align-items:center; justify-content:center; color:var(--ink-soft); font-family:'Work Sans',sans-serif; font-size:13px; border-radius:12px; margin:20px 0 32px;">
+      [ image: TBC Bank ]
+    </div>
+    <h2 style="margin-bottom:4px;">TBC Bank</h2>
+    <p style="color:var(--ink-soft); font-size:17px; margin-top:0; margin-bottom:32px;">Customer centricity at C-suite level</p>
+
+    <p>TBC Bank had been running SWAT workshops to improve customer experience, and the request that brought us in was a narrow one: observe three of these workshops and recommend how to scale them.</p>
+    <p>It became clear early on that scaling workshops alone wouldn't move the needle. The real issue sat one level up: product development, design, and CX were working as separate initiatives rather than a connected effort, which meant resources were being spent without a clear shared direction, and internal friction was slowing down the priorities that mattered most. TBC had already started to recognize parts of this, with a few initiatives underway, but stakeholders had too little understanding of each other's constraints, too little trust in each other's capabilities, and too little real collaboration across teams.</p>
+
+    <p><strong>What we did:</strong></p>
+    <p>We reviewed how product development, design, and CX teams were actually collaborating day to day, and brought the findings to the CEO, CIO, and CDO directly. Rather than recommending more workshops, we proposed reframing all of TBC's CX work around four lenses: solving concrete customer problems, advancing product design, customer journey design across products, and an overall experience vision for the bank. The goal was to give the organization a shared language and a shared definition of "good," so that overlapping efforts could be resolved and gaps could be seen clearly for the first time.</p>
+    <p>That reframing led to a structural recommendation: consolidating three separate roles into one, so that end-to-end customer journey ownership had a clear home instead of being split across teams who each only saw part of the picture. It also meant proposing changes to the organization's broader setup, role accountabilities, and where skill gaps needed to be closed.</p>
+
+    <p><strong>Where it landed:</strong></p>
+    <p>TBC agreed on a new team structure and forward plan at C-level, and began executing the changes lens by lens, treating it as an iterative process to learn and adapt from rather than a single fix. As part of the broader simplification, the bank also began streamlining its data centers.</p>
+  </div>
+
+</div>
+
+<script>
+  function showView(view) {
+    document.getElementById('view-home').style.display = (view === 'home') ? '' : 'none';
+    document.getElementById('view-portfolio').style.display = (view === 'portfolio') ? '' : 'none';
+    document.getElementById('nav-home').classList.toggle('active', view === 'home');
+    document.getElementById('nav-portfolio').classList.toggle('active', view === 'portfolio');
+    if (view === 'portfolio') {
+      const unlocked = sessionStorage.getItem('portfolioUnlocked') === 'true';
+      document.getElementById('portfolio-gate').style.display = unlocked ? 'none' : '';
+      document.getElementById('portfolio-index').style.display = unlocked ? '' : 'none';
+    }
+    window.scrollTo(0, 0);
+  }
+
+  function checkPortfolioPassword() {
+    const input = document.getElementById('portfolio-password').value;
+    if (input === 'thoughtworks2026') {
+      sessionStorage.setItem('portfolioUnlocked', 'true');
+      document.getElementById('portfolio-gate').style.display = 'none';
+      document.getElementById('portfolio-index').style.display = '';
+      document.getElementById('portfolio-error').style.display = 'none';
+    } else {
+      document.getElementById('portfolio-error').style.display = '';
+    }
+  }
+
+  function showProject(project) {
+    document.getElementById('portfolio-index').style.display = 'none';
+    document.getElementById('project-philips').style.display = (project === 'philips') ? '' : 'none';
+    document.getElementById('project-tbc').style.display = (project === 'tbc') ? '' : 'none';
+    window.scrollTo(0, 0);
+  }
+
+  function backToIndex() {
+    document.getElementById('project-philips').style.display = 'none';
+    document.getElementById('project-tbc').style.display = 'none';
+    document.getElementById('portfolio-index').style.display = '';
+    window.scrollTo(0, 0);
+  }
+</script>
+
+</body>
+</html>
